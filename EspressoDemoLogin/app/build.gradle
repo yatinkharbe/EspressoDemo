@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.test.espressodemo"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+            debug
+                {
+                    // Code coverage
+                    testCoverageEnabled = true
+                }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    // For Constraint Layout
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    // For Java unit testing framework
+    testImplementation 'junit:junit:4.12'
+    // Android runner and rules support
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    // Espresso support
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // For Idling Resource during Espresso Testing
+    implementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.2'
+
+}

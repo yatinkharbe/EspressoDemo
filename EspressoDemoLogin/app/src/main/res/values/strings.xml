@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EspressoDemo</string>
+    <string name="success">Successful</string>
+    <string name="failure">Failure</string>
+    <string name = "userid">UserId :</string>
+    <string name = "password">Password :</string>
+</resources>
